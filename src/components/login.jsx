@@ -12,7 +12,12 @@ const Login = ({ setToken }) => {
       const response = await axios.post(
         "https://proyecto-github-yhpr.onrender.com/api/usuarios/login",
         { email, password },
-        { withCredentials: true } // Esto ayuda si usas cookies para autenticación
+        {
+          withCredentials: true, // Asegura que se envían cookies o sesiones si es necesario
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
       );
 
       if (response.data.token) {
