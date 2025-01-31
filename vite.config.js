@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/api": "https://proyecto-github-yhpr.onrender.com"
+      "/api": "https://proyecto-github-yhpr.onrender.com/api/usuarios",
     }
   },
   build: {
